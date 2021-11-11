@@ -1,0 +1,34 @@
+<br><br>
+<h2 style="text-align: center;" 
+*ngIf="adding; else elseBlock">Hey! Lets add some Employees.</h2>
+<ng-template #elseBlock>
+    <h2 style="text-align: center;">Update the Details!</h2>
+</ng-template>
+<br>
+<div class="container">
+<form (ngSubmit)="submitEmployee()">
+
+    <div class="form-group">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" name="name" id="name"
+        [(ngModel)]="employee.name">
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Designation</label>
+        <input type="text" class="form-control" name="designation" id="designation"
+        [(ngModel)]="employee.designation">
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control" name="email" id="email"
+        [(ngModel)]="employee.email">
+    </div>
+
+    <button class="btn btn-success" type="submit">Submit</button>
+    <button class="btn btn-warning resetButton" type="reset"
+    style="margin: 10px;">Clear</button>
+
+</form>
+</div>
